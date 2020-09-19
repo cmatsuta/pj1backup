@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety First Travel</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+    
+</head>
+
+<body>
+    <div>
+        <h1 margin-left="auto" margin-right="auto" align="center"><img src="assets/logo.png" alt="Safety First Travel Logo" align="center" height=150px> Safety First Travel</h1>
+    </div>
+    
+    <div align="center">
+        <label>Departure Date</label>
+        <input id="departure" type="date">
+
+        <br><br>
+
+        <label>Return Date</label>
+        <input id="returning" type="date">
+
+        <br><br>
+
+        <label>Origin Location</label>
+        <input id="origin">
+
+        <br><br>
+
+        <label>Destination</label>
+        <input id="dest-location">
+
+        <br><br>
+
+        <button id="search-btn">Search</button>
+
+        <br><br>
+        
+        <button id="clear-btn">Clear Results</button>
+
+        <div id="travel-advisory"></div><br>
+        <div id="advisory-url"></div><br>
+    </div>
+
+    <script src="assets/countryCodes.js"></script>
+    <script src="assets/originAirports.js"></script>
+    <script src="assets/destinationAirports.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
