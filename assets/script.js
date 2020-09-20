@@ -85,9 +85,9 @@ $("#search-btn").on("click", function () {
         console.log(response);
 
 //if response contains no data, display "No flights between origin and destination"
-/*        if (response.Places.length === 0 || response.Quotes.length === 0) {
+        if (response.Places.length === 0 || response.Quotes.length === 0) {
             return $("#travel-advisory").text("No flights between origin and destination at this time.")
-*/
+        }
 
 console.log(response.Places[0].CountryName);
 
@@ -140,8 +140,17 @@ console.log(countryName);
                 //  2 Exercise increased caution (yellow)
                 //  3 Reconsider travel (orange)
                 //  4 Do not travel (red)
-                if (advisoryScore >= 3.5 && advisoryScore <= 4.5) {
+                if (advisoryScore >= 4.5 && advisoryScore <= 5) {
+                    $("#travel-advisory").css({ backgroundColor: "red" })
+                }
+                if (advisoryScore >= 3.5 && advisoryScore <= 4.4) {
                     $("#travel-advisory").css({ backgroundColor: "yellow" })
+                }
+                if (advisoryScore >= 2.5 && advisoryScore <= 3.4) {
+                    $("#travel-advisory").css({ backgroundColor: "#00f1ff" })
+                }
+                if (advisoryScore >= 0 && advisoryScore <= 2.4) {
+                    $("#travel-advisory").css({ backgroundColor: "#00ff80" })
                 }
 
                 $("#travel-advisory").append(advisoryMessage)
