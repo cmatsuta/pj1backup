@@ -26,29 +26,44 @@
         <br><br>
 
         <label>Origin Location</label>
-        <input id="origin">
-
+        <input list="origins" id="origin"> 
+        <datalist id="origins"></datalist>
+        
         <br><br>
 
         <label>Destination</label>
-        <input id="dest-location">
-
+        <input list="destinations" id="dest-location">
+        <datalist id="destinations"></datalist>
+    
         <br><br>
 
         <button id="search-btn">Search</button>
 
         <br><br>
         
-        <button id="clear-btn">Clear Results</button>
+        <button id="clear-btn" onclick="location.reload();">Clear Results</button>
 
         <div id="travel-advisory"></div><br>
         <div id="advisory-url"></div><br>
+        
+        <div id="flight-quote1"></div><br>
+        <div id="flight-quote2"></div><br>
+        
     </div>
+
+    <div>
+        
+    </div>
+
 
     <script src="assets/countryCodes.js"></script>
     <script src="assets/originAirports.js"></script>
     <script src="assets/destinationAirports.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <!-- JQuery script for drop-down -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="assets/script.js"></script>
 </body>

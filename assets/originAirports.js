@@ -1,5 +1,5 @@
 //list object of all medium and large hub international airports in the USA
-    const originAiport = {
+    window.airports = {
     'Albuquerque, NM' : 'ABQ',
     'Anchorage, AK' : 'ANC',
     'Atlanta, GA' : 'ATL',
