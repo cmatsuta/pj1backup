@@ -1,60 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safety First Travel</title>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="assets/style.css">
-    
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
 </head>
 
 <body>
-    <div>
-        <h1 margin-left="auto" margin-right="auto" align="center"><img src="assets/logo.png" alt="Safety First Travel Logo" align="center" height=150px> Safety First Travel</h1>
-    </div>
-    
-    <div align="center">
-        <label>Departure Date</label>
-        <input id="departure" type="date">
+    <!--Hero Title and Logo-->
+    <section class="hero is-primary" img src=>
+        <div class="hero-body">
+            <div class="container">
+                <figure class="image is-3by1">
+                    <img src="assets/logo.png" alt="Safety First Travel Logo">
+                </figure>
+                <h1 class="title" align="center" height=150px>
+                    Safety First Travel
+                </h1>
 
-        <br><br>
+                <h2 class="subtitle" align="center">
+                    Your First Step to Your Perfect Trip
+                </h2>
+            </div>
+        </div>
+    </section>
+    <!--First section of tiles-->
+    <section class="section">
+        <div class="container">
+            <div class="tile is-ancestor">
+                <div class="tile is-6 is-parent">
+                    <div class="tile is-child">
+                        <label>Departure Date</label>
+                        <input id="departure" type="text" autocomplete="off">
+                    </div>
 
-        <label>Return Date</label>
-        <input id="returning" type="date">
+                    <div class="tile is-child">
+                        <label>Return Date</label>
+                        <input id="returning" type="text" autocomplete="off">
+                    </div>
+                </div>
+                <div class="tile is-parent is-vertical">
+                    <div class="tile is-child">
+                        <label>Origin Location</label>
+                        <input list="origins" id="origin">
+                        <datalist id="origins"></datalist>
+                    </div>
 
-        <br><br>
+                    <div class="tile is-child">
+                        <label>Destination</label>
+                        <input list="destinations" id="dest-location">
+                        <datalist id="destinations"></datalist>
+                    </div>
+                </div>
+                <!--Info tile-->
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-success">
+                        <div class="content">
+                            <p class="title">About the App</p>
+                            <p class="subtitle">Content</p>
+                            <div class="content">
 
-        <label>Origin Location</label>
-        <input list="origins" id="origin"> 
-        <datalist id="origins"></datalist>
-        
-        <br><br>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Search Buttons tile-->
+    <section class="section">
+        <div class="container">
+            <div class="tile is-parent is-8 box">
+                <div class="tile is-child">
+                    <button id="search-btn">Search</button>
+                    <button id="clear-btn" onclick="location.reload();" value="Reset form">Clear Results</button>
+        <div class="container" id="buttons">
+            <div class="tile is-parent is-8">
+                <div class="tile is-child" class="center" id="buttonsbox">
+                    <button id="search-btn">Search</button>
+                    <button id="clear-btn" onclick="location.reload();" value="Reset form">Clear Results</button> 
+                </div>
+            </div>
+        </div>
+        </div>
+        <br>
+        <br>
+    </section>
+    <!--Travel tile-->
+    <section class="section">
+        <div class="container">
+            <div class="tile is-full is-parent">
+                <div class="tile is-child box" class="content">
+                    <span class="card-title">Travel Advisory:</span>
+                    <p id="travel-advisory"></p>
+                    <p id="advisory-url"></p>
+                    <hr>
+                    <span class="card-title">Link to Travel Advisory:</span>
+                    <p id="advisory-url"> </p>
+                </div>
+            </div>
+        </div>
 
-        <label>Destination</label>
-        <input list="destinations" id="dest-location">
-        <datalist id="destinations"></datalist>
-    
-        <br><br>
-
-        <button id="search-btn">Search</button>
-
-        <br><br>
-        
-        <button id="clear-btn" onclick="location.reload();">Clear Results</button>
-
-        <div id="travel-advisory"></div><br>
-        <div id="advisory-url"></div><br>
-        
-        <div id="flight-quote1"></div><br>
-        <div id="flight-quote2"></div><br>
-        
-    </div>
-
-    <div>
-        
-    </div>
-
+    </section>
+    <!--Flight and News tile-->
+    <section class="section">
+        <div class="container">
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <div class="tile is-child is-half box">
+                        <p id="flight-quote1">First option</p>
+                        <p id="flight-quote2">Second option</p>
+                        <span class="card-title">Flight Quote:</span>
+                        <p id="flight-quote1"></p>
+                        <p id="flight-quote2"></p>
+                    </div>
+                    <div class="tile is-child is-half box">
+                        <div class="item4">
+                            <p>News About Your Destination</p>
+                            <div id="forecast">
+                                <div class="nested">
+                                    <div id="day1">
+                                        <p id="headline1"></p>
+                                        <p id="picture1"></p>
+                                        <p id="story1"></p>
+                                        <p id="caption1"></p>
+                                        <p id="storyDate1"></p>
+                                        <p id="storySource1"></p>
+                                        <p id="articleURL1"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    </section>
 
     <script src="assets/countryCodes.js"></script>
     <script src="assets/originAirports.js"></script>
@@ -62,10 +145,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <!-- JQuery script for drop-down -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
-    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="assets/script.js"></script>
 </body>
 
 </html>
+
+
+<div class="item4">
+    <p>5-Day Forecast</p>
+    <div id="forecast">
+        <div class="nested">
+            <div id="day1">
+                <p id="date1"></p>
+                <p id="icon1"></p>
+                <p id="temp1"></p>
+                <p id="humidity1"></p>
+            </div>
+            <div id="day2">
+                <p id="date2"></p>
+                <p id="icon2"></p>
+                <p id="temp2"></p>
+                <p id="humidity2"></p>
+            </div>
+            <div id="day3">
+                <p id="date3"></p>
+                <p id="icon3"></p>
+                <p id="temp3"></p>
+                <p id="humidity3"></p>
+            </div>
+            <div id="day4">
+                <p id="date4"></p>
+                <p id="icon4"></p>
+                <p id="temp4"></p>
+                <p id="humidity4"></p>
+            </div>
+            <div id="day5">
+                <p id="date5"></p>
+                <p id="icon5"></p>
+                <p id="temp5"></p>
+                <p id="humidity5"></p>
+            </div>
+        </div>
+    </div>
+</div>

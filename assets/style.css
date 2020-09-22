@@ -1,0 +1,23 @@
+.p {
+    text-align: center;
+}
+
+.button {
+    text-align: center;
+}
+
+#buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#buttonsbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-title {
+    font-weight: bold;
+}
